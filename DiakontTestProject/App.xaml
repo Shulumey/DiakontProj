@@ -1,0 +1,18 @@
+<Application x:Class="DiakontTestProject.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:DiakontTestProject" StartupUri="Views/MainWindow.xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" d1p1:Ignorable="d" xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:DiakontTestProject.ViewModel"
+             xmlns:views="clr-namespace:DiakontTestProject.Views">
+  <Application.Resources>
+    <ResourceDictionary>
+      <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:DiakontTestProject.ViewModel" />
+            <DataTemplate DataType="{x:Type viewModel:PositionsViewModel}">
+                <views:PositionsView/>
+            </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:RatesViewModel}">
+            <views:RatesView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:ReportViewModel}">
+            <views:ReportView/>
+        </DataTemplate>
+        </ResourceDictionary>
+  </Application.Resources>
+</Application>
